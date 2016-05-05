@@ -4,9 +4,9 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>UtilConfig.h</itemPath>
-      <itemPath>UtilDateTime.h</itemPath>
-      <itemPath>UtilLogger.h</itemPath>
+      <itemPath>src/UtilConfig.h</itemPath>
+      <itemPath>src/UtilDateTime.h</itemPath>
+      <itemPath>src/UtilLogger.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -25,9 +25,9 @@
           <itemPath>third-party/pugixml/src/pugixml.hpp</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <itemPath>UtilConfig.cpp</itemPath>
-      <itemPath>UtilDateTime.cpp</itemPath>
-      <itemPath>UtilLogger.cpp</itemPath>
+      <itemPath>src/UtilConfig.cpp</itemPath>
+      <itemPath>src/UtilDateTime.cpp</itemPath>
+      <itemPath>src/UtilLogger.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -77,18 +77,6 @@
       </item>
       <item path="UnitTest/UtilMain.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="UtilConfig.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="UtilConfig.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="UtilDateTime.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="UtilDateTime.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="UtilLogger.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="UtilLogger.h" ex="false" tool="3" flavor2="0">
-      </item>
       <folder path="TestFiles/f1">
         <cTool>
           <incDir>
@@ -111,6 +99,18 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <item path="src/UtilConfig.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/UtilConfig.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/UtilDateTime.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/UtilDateTime.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/UtilLogger.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/UtilLogger.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="third-party/pugixml/contrib/foreach.hpp"
             ex="false"
             tool="3"
@@ -144,6 +144,11 @@
         </cTool>
         <ccTool>
           <developmentMode>5</developmentMode>
+          <incDir>
+            <pElem>/usr/local/include</pElem>
+            <pElem>third-party/pugixml/src</pElem>
+          </incDir>
+          <commandLine>-std=c++11</commandLine>
         </ccTool>
         <fortranCompilerTool>
           <developmentMode>5</developmentMode>
@@ -162,18 +167,6 @@
       </item>
       <item path="UnitTest/UtilMain.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="UtilConfig.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="UtilConfig.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="UtilDateTime.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="UtilDateTime.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="UtilLogger.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="UtilLogger.h" ex="false" tool="3" flavor2="0">
-      </item>
       <folder path="TestFiles/f1">
         <cTool>
           <incDir>
@@ -187,8 +180,27 @@
         </ccTool>
         <linkerTool>
           <output>${TESTDIR}/TestFiles/f1</output>
+          <linkerAddLib>
+            <pElem>/usr/local/lib/</pElem>
+          </linkerAddLib>
+          <linkerLibItems>
+            <linkerLibLibItem>g3logger</linkerLibLibItem>
+            <linkerLibLibItem>boost_date_time</linkerLibLibItem>
+          </linkerLibItems>
         </linkerTool>
       </folder>
+      <item path="src/UtilConfig.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/UtilConfig.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/UtilDateTime.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/UtilDateTime.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/UtilLogger.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/UtilLogger.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="third-party/pugixml/contrib/foreach.hpp"
             ex="false"
             tool="3"

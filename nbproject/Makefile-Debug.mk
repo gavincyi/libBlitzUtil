@@ -35,9 +35,9 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/UtilConfig.o \
-	${OBJECTDIR}/UtilDateTime.o \
-	${OBJECTDIR}/UtilLogger.o \
+	${OBJECTDIR}/src/UtilConfig.o \
+	${OBJECTDIR}/src/UtilDateTime.o \
+	${OBJECTDIR}/src/UtilLogger.o \
 	${OBJECTDIR}/third-party/pugixml/src/pugixml.o
 
 # Test Directory
@@ -73,20 +73,20 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblibblitzutil.a: ${OBJECTFILES}
 	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblibblitzutil.a ${OBJECTFILES} 
 	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblibblitzutil.a
 
-${OBJECTDIR}/UtilConfig.o: UtilConfig.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/UtilConfig.o: src/UtilConfig.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I/usr/local/include -Ithird-party/pugixml/src -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/UtilConfig.o UtilConfig.cpp
+	$(COMPILE.cc) -g -I/usr/local/include -Ithird-party/pugixml/src -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/UtilConfig.o src/UtilConfig.cpp
 
-${OBJECTDIR}/UtilDateTime.o: UtilDateTime.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/UtilDateTime.o: src/UtilDateTime.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I/usr/local/include -Ithird-party/pugixml/src -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/UtilDateTime.o UtilDateTime.cpp
+	$(COMPILE.cc) -g -I/usr/local/include -Ithird-party/pugixml/src -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/UtilDateTime.o src/UtilDateTime.cpp
 
-${OBJECTDIR}/UtilLogger.o: UtilLogger.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/UtilLogger.o: src/UtilLogger.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I/usr/local/include -Ithird-party/pugixml/src -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/UtilLogger.o UtilLogger.cpp
+	$(COMPILE.cc) -g -I/usr/local/include -Ithird-party/pugixml/src -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/UtilLogger.o src/UtilLogger.cpp
 
 ${OBJECTDIR}/third-party/pugixml/src/pugixml.o: third-party/pugixml/src/pugixml.cpp 
 	${MKDIR} -p ${OBJECTDIR}/third-party/pugixml/src
@@ -127,43 +127,43 @@ ${TESTDIR}/UnitTest/UtilMain.o: UnitTest/UtilMain.cpp
 	$(COMPILE.cc) -g -I/usr/local/include -Ithird-party/pugixml/src -I/usr/local/include/Catch/include -MMD -MP -MF "$@.d" -o ${TESTDIR}/UnitTest/UtilMain.o UnitTest/UtilMain.cpp
 
 
-${OBJECTDIR}/UtilConfig_nomain.o: ${OBJECTDIR}/UtilConfig.o UtilConfig.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/UtilConfig.o`; \
+${OBJECTDIR}/src/UtilConfig_nomain.o: ${OBJECTDIR}/src/UtilConfig.o src/UtilConfig.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/src/UtilConfig.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} "$@.d";\
-	    $(COMPILE.cc) -g -I/usr/local/include -Ithird-party/pugixml/src -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/UtilConfig_nomain.o UtilConfig.cpp;\
+	    $(COMPILE.cc) -g -I/usr/local/include -Ithird-party/pugixml/src -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/UtilConfig_nomain.o src/UtilConfig.cpp;\
 	else  \
-	    ${CP} ${OBJECTDIR}/UtilConfig.o ${OBJECTDIR}/UtilConfig_nomain.o;\
+	    ${CP} ${OBJECTDIR}/src/UtilConfig.o ${OBJECTDIR}/src/UtilConfig_nomain.o;\
 	fi
 
-${OBJECTDIR}/UtilDateTime_nomain.o: ${OBJECTDIR}/UtilDateTime.o UtilDateTime.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/UtilDateTime.o`; \
+${OBJECTDIR}/src/UtilDateTime_nomain.o: ${OBJECTDIR}/src/UtilDateTime.o src/UtilDateTime.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/src/UtilDateTime.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} "$@.d";\
-	    $(COMPILE.cc) -g -I/usr/local/include -Ithird-party/pugixml/src -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/UtilDateTime_nomain.o UtilDateTime.cpp;\
+	    $(COMPILE.cc) -g -I/usr/local/include -Ithird-party/pugixml/src -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/UtilDateTime_nomain.o src/UtilDateTime.cpp;\
 	else  \
-	    ${CP} ${OBJECTDIR}/UtilDateTime.o ${OBJECTDIR}/UtilDateTime_nomain.o;\
+	    ${CP} ${OBJECTDIR}/src/UtilDateTime.o ${OBJECTDIR}/src/UtilDateTime_nomain.o;\
 	fi
 
-${OBJECTDIR}/UtilLogger_nomain.o: ${OBJECTDIR}/UtilLogger.o UtilLogger.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/UtilLogger.o`; \
+${OBJECTDIR}/src/UtilLogger_nomain.o: ${OBJECTDIR}/src/UtilLogger.o src/UtilLogger.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/src/UtilLogger.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} "$@.d";\
-	    $(COMPILE.cc) -g -I/usr/local/include -Ithird-party/pugixml/src -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/UtilLogger_nomain.o UtilLogger.cpp;\
+	    $(COMPILE.cc) -g -I/usr/local/include -Ithird-party/pugixml/src -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/UtilLogger_nomain.o src/UtilLogger.cpp;\
 	else  \
-	    ${CP} ${OBJECTDIR}/UtilLogger.o ${OBJECTDIR}/UtilLogger_nomain.o;\
+	    ${CP} ${OBJECTDIR}/src/UtilLogger.o ${OBJECTDIR}/src/UtilLogger_nomain.o;\
 	fi
 
 ${OBJECTDIR}/third-party/pugixml/src/pugixml_nomain.o: ${OBJECTDIR}/third-party/pugixml/src/pugixml.o third-party/pugixml/src/pugixml.cpp 
