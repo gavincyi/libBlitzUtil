@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <itemPath>UtilConfig.h</itemPath>
+      <itemPath>UtilDateTime.h</itemPath>
+      <itemPath>UtilLogger.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="pugixml" displayName="pugixml" projectFiles="true">
+        <logicalFolder name="contrib" displayName="contrib" projectFiles="true">
+          <itemPath>third-party/pugixml/contrib/foreach.hpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="src" displayName="src" projectFiles="true">
+          <itemPath>third-party/pugixml/src/pugiconfig.hpp</itemPath>
+          <itemPath>third-party/pugixml/src/pugixml.cpp</itemPath>
+          <itemPath>third-party/pugixml/src/pugixml.hpp</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <itemPath>UtilConfig.cpp</itemPath>
+      <itemPath>UtilDateTime.cpp</itemPath>
+      <itemPath>UtilLogger.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+      <logicalFolder name="f1" displayName="UnitTest" projectFiles="true" kind="TEST">
+        <itemPath>UnitTest/UtilConfigTest.cpp</itemPath>
+        <itemPath>UnitTest/UtilDateTimeTest.cpp</itemPath>
+        <itemPath>UnitTest/UtilLoggerTest.cpp</itemPath>
+        <itemPath>UnitTest/UtilMain.cpp</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>third-party/pugixml</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="3">
+      <toolsSet>
+        <compilerSet>GNU|GNU</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>/usr/local/include</pElem>
+            <pElem>third-party/pugixml/src</pElem>
+          </incDir>
+          <commandLine>-std=c++11</commandLine>
+        </ccTool>
+        <archiverTool>
+        </archiverTool>
+      </compileType>
+      <item path="UnitTest/UtilConfigTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="UnitTest/UtilDateTimeTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="UnitTest/UtilLoggerTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="UnitTest/UtilMain.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="UtilConfig.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="UtilConfig.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="UtilDateTime.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="UtilDateTime.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="UtilLogger.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="UtilLogger.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <folder path="TestFiles/f1">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>/usr/local/include/Catch/include</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f1</output>
+          <linkerAddLib>
+            <pElem>/usr/local/lib/</pElem>
+          </linkerAddLib>
+          <linkerLibItems>
+            <linkerLibLibItem>g3logger</linkerLibLibItem>
+            <linkerLibLibItem>boost_date_time</linkerLibLibItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <item path="third-party/pugixml/contrib/foreach.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="third-party/pugixml/src/pugiconfig.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="third-party/pugixml/src/pugixml.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="third-party/pugixml/src/pugixml.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="3">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <archiverTool>
+        </archiverTool>
+      </compileType>
+      <item path="UnitTest/UtilConfigTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="UnitTest/UtilDateTimeTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="UnitTest/UtilLoggerTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="UnitTest/UtilMain.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="UtilConfig.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="UtilConfig.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="UtilDateTime.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="UtilDateTime.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="UtilLogger.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="UtilLogger.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <folder path="TestFiles/f1">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f1</output>
+        </linkerTool>
+      </folder>
+      <item path="third-party/pugixml/contrib/foreach.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="third-party/pugixml/src/pugiconfig.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="third-party/pugixml/src/pugixml.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="third-party/pugixml/src/pugixml.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
