@@ -4,17 +4,33 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>src/UtilConfig.h</itemPath>
-      <itemPath>src/UtilDateTime.h</itemPath>
-      <itemPath>src/UtilLogger.h</itemPath>
+      <logicalFolder name="fixheader" displayName="fixheader" projectFiles="true">
+        <itemPath>include/fixheader/FIX50SP2_classes.hpp</itemPath>
+        <itemPath>include/fixheader/FIX50SP2_router.hpp</itemPath>
+        <itemPath>include/fixheader/FIX50SP2_types.hpp</itemPath>
+      </logicalFolder>
+      <itemPath>includes/UtilConfig.h</itemPath>
+      <itemPath>includes/UtilDateTime.h</itemPath>
+      <itemPath>third-party/pugixml/UtilFixEngine.h</itemPath>
+      <itemPath>includes/UtilLogger.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
+      <logicalFolder name="fix8" displayName="fix8" projectFiles="true">
+        <itemPath>third-party/fix8/FIX50SP2.xml</itemPath>
+        <itemPath>third-party/fix8/FIXT11.xml</itemPath>
+        <itemPath>third-party/fix8/MakeSource</itemPath>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <logicalFolder name="FixEngine" displayName="FixEngine" projectFiles="true">
+        <itemPath>src/FixEngine/FIX50SP2_classes.cpp</itemPath>
+        <itemPath>src/FixEngine/FIX50SP2_traits.cpp</itemPath>
+        <itemPath>src/FixEngine/FIX50SP2_types.cpp</itemPath>
+      </logicalFolder>
       <logicalFolder name="pugixml" displayName="pugixml" projectFiles="true">
         <logicalFolder name="contrib" displayName="contrib" projectFiles="true">
           <itemPath>third-party/pugixml/contrib/foreach.hpp</itemPath>
@@ -25,9 +41,11 @@
           <itemPath>third-party/pugixml/src/pugixml.hpp</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <itemPath>src/UtilConfig.cpp</itemPath>
-      <itemPath>src/UtilDateTime.cpp</itemPath>
-      <itemPath>src/UtilLogger.cpp</itemPath>
+      <logicalFolder name="Utilities" displayName="Utilities" projectFiles="true">
+        <itemPath>src/Utilities/UtilConfig.cpp</itemPath>
+        <itemPath>src/Utilities/UtilDateTime.cpp</itemPath>
+        <itemPath>src/Utilities/UtilLogger.cpp</itemPath>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -49,6 +67,10 @@
   </logicalFolder>
   <sourceRootList>
     <Elem>third-party/pugixml</Elem>
+    <Elem>src/Utilities</Elem>
+    <Elem>third-party/fix8</Elem>
+    <Elem>src/FixEngine</Elem>
+    <Elem>include/fixheader</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -63,10 +85,12 @@
           <incDir>
             <pElem>/usr/local/include</pElem>
             <pElem>third-party/pugixml/src</pElem>
+            <pElem>include</pElem>
           </incDir>
           <commandLine>-std=c++11</commandLine>
         </ccTool>
         <archiverTool>
+          <output>lib/${CND_CONF}/libblitzutil.a</output>
         </archiverTool>
       </compileType>
       <item path="UnitTest/UtilConfigTest.cpp" ex="false" tool="1" flavor2="0">
@@ -99,17 +123,49 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
-      <item path="src/UtilConfig.cpp" ex="false" tool="1" flavor2="0">
+      <item path="include/fixheader/FIX50SP2_classes.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="src/UtilConfig.h" ex="false" tool="3" flavor2="0">
+      <item path="include/fixheader/FIX50SP2_router.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="src/UtilDateTime.cpp" ex="false" tool="1" flavor2="0">
+      <item path="include/fixheader/FIX50SP2_types.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="src/UtilDateTime.h" ex="false" tool="3" flavor2="0">
+      <item path="includes/UtilConfig.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/UtilLogger.cpp" ex="false" tool="1" flavor2="0">
+      <item path="includes/UtilDateTime.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/UtilLogger.h" ex="false" tool="3" flavor2="0">
+      <item path="includes/UtilLogger.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/FixEngine/FIX50SP2_classes.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/FixEngine/FIX50SP2_traits.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/FixEngine/FIX50SP2_types.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Utilities/UtilConfig.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Utilities/UtilDateTime.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Utilities/UtilLogger.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="third-party/fix8/FIX50SP2.xml" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="third-party/fix8/FIXT11.xml" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="third-party/fix8/MakeSource" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="third-party/pugixml/UtilFixEngine.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="third-party/pugixml/contrib/foreach.hpp"
             ex="false"
@@ -134,7 +190,7 @@
     </conf>
     <conf name="Release" type="3">
       <toolsSet>
-        <compilerSet>default</compilerSet>
+        <compilerSet>GNU|GNU</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
@@ -157,6 +213,7 @@
           <developmentMode>5</developmentMode>
         </asmTool>
         <archiverTool>
+          <output>lib/${CND_CONF}/libblitzutil.a</output>
         </archiverTool>
       </compileType>
       <item path="UnitTest/UtilConfigTest.cpp" ex="false" tool="1" flavor2="0">
@@ -189,17 +246,49 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
-      <item path="src/UtilConfig.cpp" ex="false" tool="1" flavor2="0">
+      <item path="include/fixheader/FIX50SP2_classes.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="src/UtilConfig.h" ex="false" tool="3" flavor2="0">
+      <item path="include/fixheader/FIX50SP2_router.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="src/UtilDateTime.cpp" ex="false" tool="1" flavor2="0">
+      <item path="include/fixheader/FIX50SP2_types.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
-      <item path="src/UtilDateTime.h" ex="false" tool="3" flavor2="0">
+      <item path="includes/UtilConfig.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/UtilLogger.cpp" ex="false" tool="1" flavor2="0">
+      <item path="includes/UtilDateTime.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/UtilLogger.h" ex="false" tool="3" flavor2="0">
+      <item path="includes/UtilLogger.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/FixEngine/FIX50SP2_classes.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/FixEngine/FIX50SP2_traits.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/FixEngine/FIX50SP2_types.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Utilities/UtilConfig.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Utilities/UtilDateTime.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Utilities/UtilLogger.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="third-party/fix8/FIX50SP2.xml" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="third-party/fix8/FIXT11.xml" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="third-party/fix8/MakeSource" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="third-party/pugixml/UtilFixEngine.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="third-party/pugixml/contrib/foreach.hpp"
             ex="false"

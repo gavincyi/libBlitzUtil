@@ -13,8 +13,8 @@ CND_BUILDDIR=build
 CND_DLIB_EXT=so
 NBTMPDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblibblitzutil.a
-OUTPUT_BASENAME=liblibblitzutil.a
+OUTPUT_PATH=lib/${CND_CONF}/libblitzutil.a
+OUTPUT_BASENAME=libblitzutil.a
 PACKAGE_TOP_DIR=libBlitzUtil/
 
 # Functions

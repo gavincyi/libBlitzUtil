@@ -1,0 +1,2 @@
+#!/bin/bash
+/usr/local/bin/f8c -p FIX50SP2 -n FIX50SP2 -x FIXT11.xml FIX50SP2.xml

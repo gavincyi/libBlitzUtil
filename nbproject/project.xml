@@ -11,6 +11,10 @@
             <make-dep-projects/>
             <sourceRootList>
                 <sourceRootElem>third-party/pugixml</sourceRootElem>
+                <sourceRootElem>src/Utilities</sourceRootElem>
+                <sourceRootElem>third-party/fix8</sourceRootElem>
+                <sourceRootElem>src/FixEngine</sourceRootElem>
+                <sourceRootElem>include/fixheader</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
