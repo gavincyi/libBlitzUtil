@@ -12,10 +12,10 @@
         <itemPath>include/fixheader/FIX50SP2_router.hpp</itemPath>
         <itemPath>include/fixheader/FIX50SP2_types.hpp</itemPath>
       </logicalFolder>
-      <itemPath>includes/UtilConfig.h</itemPath>
-      <itemPath>includes/UtilDateTime.h</itemPath>
-      <itemPath>third-party/pugixml/UtilFixEngine.h</itemPath>
-      <itemPath>includes/UtilLogger.h</itemPath>
+      <itemPath>include/UtilConfig.h</itemPath>
+      <itemPath>include/UtilDateTime.h</itemPath>
+      <itemPath>include/UtilFixEngine.h</itemPath>
+      <itemPath>include/UtilLogger.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -129,6 +129,14 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <item path="include/UtilConfig.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/UtilDateTime.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/UtilFixEngine.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/UtilLogger.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/fixheader/FIX44_classes.hpp"
             ex="false"
             tool="3"
@@ -153,12 +161,6 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="includes/UtilConfig.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="includes/UtilDateTime.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="includes/UtilLogger.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="src/FixEngine/FIX44_classes.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/FixEngine/FIX44_traits.cpp" ex="false" tool="1" flavor2="0">
@@ -182,11 +184,6 @@
       <item path="third-party/fix8/FIXT11.xml" ex="false" tool="3" flavor2="0">
       </item>
       <item path="third-party/fix8/MakeSource" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="third-party/pugixml/UtilFixEngine.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
       </item>
       <item path="third-party/pugixml/contrib/foreach.hpp"
             ex="false"
@@ -267,6 +264,14 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <item path="include/UtilConfig.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/UtilDateTime.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/UtilFixEngine.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/UtilLogger.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/fixheader/FIX44_classes.hpp"
             ex="false"
             tool="3"
@@ -291,12 +296,6 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="includes/UtilConfig.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="includes/UtilDateTime.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="includes/UtilLogger.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="src/FixEngine/FIX44_classes.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/FixEngine/FIX44_traits.cpp" ex="false" tool="1" flavor2="0">
@@ -320,11 +319,6 @@
       <item path="third-party/fix8/FIXT11.xml" ex="false" tool="3" flavor2="0">
       </item>
       <item path="third-party/fix8/MakeSource" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="third-party/pugixml/UtilFixEngine.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
       </item>
       <item path="third-party/pugixml/contrib/foreach.hpp"
             ex="false"
