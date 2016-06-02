@@ -35,6 +35,9 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/src/FixEngine/FIX44_classes.o \
+	${OBJECTDIR}/src/FixEngine/FIX44_traits.o \
+	${OBJECTDIR}/src/FixEngine/FIX44_types.o \
 	${OBJECTDIR}/src/FixEngine/FIX50SP2_classes.o \
 	${OBJECTDIR}/src/FixEngine/FIX50SP2_traits.o \
 	${OBJECTDIR}/src/FixEngine/FIX50SP2_types.o \
@@ -75,6 +78,21 @@ lib/${CND_CONF}/libblitzutil.a: ${OBJECTFILES}
 	${RM} lib/${CND_CONF}/libblitzutil.a
 	${AR} -rv lib/${CND_CONF}/libblitzutil.a ${OBJECTFILES} 
 	$(RANLIB) lib/${CND_CONF}/libblitzutil.a
+
+${OBJECTDIR}/src/FixEngine/FIX44_classes.o: src/FixEngine/FIX44_classes.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/FixEngine
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I/usr/local/include -Ithird-party/pugixml/src -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/FixEngine/FIX44_classes.o src/FixEngine/FIX44_classes.cpp
+
+${OBJECTDIR}/src/FixEngine/FIX44_traits.o: src/FixEngine/FIX44_traits.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/FixEngine
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I/usr/local/include -Ithird-party/pugixml/src -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/FixEngine/FIX44_traits.o src/FixEngine/FIX44_traits.cpp
+
+${OBJECTDIR}/src/FixEngine/FIX44_types.o: src/FixEngine/FIX44_types.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/FixEngine
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -I/usr/local/include -Ithird-party/pugixml/src -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/FixEngine/FIX44_types.o src/FixEngine/FIX44_types.cpp
 
 ${OBJECTDIR}/src/FixEngine/FIX50SP2_classes.o: src/FixEngine/FIX50SP2_classes.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/FixEngine
@@ -144,6 +162,45 @@ ${TESTDIR}/UnitTest/UtilMain.o: UnitTest/UtilMain.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -I/usr/local/include -Ithird-party/pugixml/src -I. -MMD -MP -MF "$@.d" -o ${TESTDIR}/UnitTest/UtilMain.o UnitTest/UtilMain.cpp
 
+
+${OBJECTDIR}/src/FixEngine/FIX44_classes_nomain.o: ${OBJECTDIR}/src/FixEngine/FIX44_classes.o src/FixEngine/FIX44_classes.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/FixEngine
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/src/FixEngine/FIX44_classes.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -I/usr/local/include -Ithird-party/pugixml/src -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/FixEngine/FIX44_classes_nomain.o src/FixEngine/FIX44_classes.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/src/FixEngine/FIX44_classes.o ${OBJECTDIR}/src/FixEngine/FIX44_classes_nomain.o;\
+	fi
+
+${OBJECTDIR}/src/FixEngine/FIX44_traits_nomain.o: ${OBJECTDIR}/src/FixEngine/FIX44_traits.o src/FixEngine/FIX44_traits.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/FixEngine
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/src/FixEngine/FIX44_traits.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -I/usr/local/include -Ithird-party/pugixml/src -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/FixEngine/FIX44_traits_nomain.o src/FixEngine/FIX44_traits.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/src/FixEngine/FIX44_traits.o ${OBJECTDIR}/src/FixEngine/FIX44_traits_nomain.o;\
+	fi
+
+${OBJECTDIR}/src/FixEngine/FIX44_types_nomain.o: ${OBJECTDIR}/src/FixEngine/FIX44_types.o src/FixEngine/FIX44_types.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/FixEngine
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/src/FixEngine/FIX44_types.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} "$@.d";\
+	    $(COMPILE.cc) -O2 -I/usr/local/include -Ithird-party/pugixml/src -Dmain=__nomain -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/FixEngine/FIX44_types_nomain.o src/FixEngine/FIX44_types.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/src/FixEngine/FIX44_types.o ${OBJECTDIR}/src/FixEngine/FIX44_types_nomain.o;\
+	fi
 
 ${OBJECTDIR}/src/FixEngine/FIX50SP2_classes_nomain.o: ${OBJECTDIR}/src/FixEngine/FIX50SP2_classes.o src/FixEngine/FIX50SP2_classes.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/FixEngine

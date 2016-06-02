@@ -5,6 +5,9 @@
                    displayName="Header Files"
                    projectFiles="true">
       <logicalFolder name="fixheader" displayName="fixheader" projectFiles="true">
+        <itemPath>include/fixheader/FIX44_classes.hpp</itemPath>
+        <itemPath>include/fixheader/FIX44_router.hpp</itemPath>
+        <itemPath>include/fixheader/FIX44_types.hpp</itemPath>
         <itemPath>include/fixheader/FIX50SP2_classes.hpp</itemPath>
         <itemPath>include/fixheader/FIX50SP2_router.hpp</itemPath>
         <itemPath>include/fixheader/FIX50SP2_types.hpp</itemPath>
@@ -27,6 +30,9 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="FixEngine" displayName="FixEngine" projectFiles="true">
+        <itemPath>src/FixEngine/FIX44_classes.cpp</itemPath>
+        <itemPath>src/FixEngine/FIX44_traits.cpp</itemPath>
+        <itemPath>src/FixEngine/FIX44_types.cpp</itemPath>
         <itemPath>src/FixEngine/FIX50SP2_classes.cpp</itemPath>
         <itemPath>src/FixEngine/FIX50SP2_traits.cpp</itemPath>
         <itemPath>src/FixEngine/FIX50SP2_types.cpp</itemPath>
@@ -123,6 +129,15 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <item path="include/fixheader/FIX44_classes.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/fixheader/FIX44_router.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/fixheader/FIX44_types.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/fixheader/FIX50SP2_classes.hpp"
             ex="false"
             tool="3"
@@ -143,6 +158,12 @@
       <item path="includes/UtilDateTime.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="includes/UtilLogger.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/FixEngine/FIX44_classes.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/FixEngine/FIX44_traits.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/FixEngine/FIX44_types.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/FixEngine/FIX50SP2_classes.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -246,6 +267,15 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <item path="include/fixheader/FIX44_classes.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="include/fixheader/FIX44_router.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/fixheader/FIX44_types.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/fixheader/FIX50SP2_classes.hpp"
             ex="false"
             tool="3"
@@ -266,6 +296,12 @@
       <item path="includes/UtilDateTime.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="includes/UtilLogger.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/FixEngine/FIX44_classes.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/FixEngine/FIX44_traits.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/FixEngine/FIX44_types.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/FixEngine/FIX50SP2_classes.cpp" ex="false" tool="1" flavor2="0">
       </item>
